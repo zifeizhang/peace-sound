@@ -104,6 +104,7 @@
     label.font = [UIFont systemFontOfSize:20];
     if (indexPath.item == 7) {
         label.text = [NSString stringWithFormat:@"%@",timeArr[indexPath.item]];
+        label.textColor = [UIColor redColor];
     }else{
     
         label.text = [NSString stringWithFormat:@"%@ minutes",timeArr[indexPath.item]];

@@ -32,6 +32,14 @@
 }
 @property(nonatomic,strong)UICollectionView *userCollectionView;
 @property(nonatomic,strong) UISlider *mySlider;
+
+@property(nonatomic,strong)UIView *waveView;
+@property(nonatomic,strong)UIView *windView;
+@property(nonatomic,strong)UIView *rainView;
+@property(nonatomic,strong)UIView *thunderView;
+@property(nonatomic,strong)UIView *clockView;
+@property(nonatomic,strong)UIView *birdsView;
+
 @end
 
 @implementation SoundViewController
@@ -62,7 +70,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:146/255.0 green:222/255.0 blue:50/255.0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:64/255.0 green:179/255.0 blue:229/255.0 alpha:1];
     self.title = @"Sound";
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -111,7 +119,6 @@
 -(void)tapView{
 
     backView.hidden = YES;
-    //_mySlider.value = 0.5;
 }
 #pragma mark - userCollectionView
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -159,7 +166,15 @@
                 [SVProgressHUD showInfoWithStatus:@"当前处于静音模式，不能播放"];
                 return;
             }
-            cell.backgroundColor = [UIColor colorWithRed:44/255.0 green:167/255.0 blue:254/255.0 alpha:1];
+    
+            if (!_waveView) {
+                _waveView = [[UIView alloc]initWithFrame:CGRectMake(0, cell.frame.size.height*0.5, cell.frame.size.width, cell.bounds.size.height*0.5)];
+                _waveView.alpha = 0.5;
+                _waveView.backgroundColor = [UIColor colorWithRed:44/255.0 green:167/255.0 blue:254/255.0 alpha:1];
+                [cell addSubview:_waveView];
+                _waveView.userInteractionEnabled = NO;
+            }
+            _waveView.hidden = NO;
             if (!_wavePlayer) {
                 _wavePlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"waves" ofType:@"mp3"]] error:nil];
                 _wavePlayer.volume = 0.5;
@@ -180,7 +195,15 @@
                 [SVProgressHUD showInfoWithStatus:@"当前处于静音模式，不能播放"];
                 return;
             }
-            cell.backgroundColor = [UIColor colorWithRed:254/255.0 green:201/255.0 blue:86/255.0 alpha:1];
+
+            if (!_windView) {
+                _windView = [[UIView alloc]initWithFrame:CGRectMake(0, cell.frame.size.height*0.5, cell.frame.size.width, cell.bounds.size.height*0.5)];
+                _windView.alpha = 0.5;
+                _windView.backgroundColor = [UIColor colorWithRed:254/255.0 green:201/255.0 blue:86/255.0 alpha:1];
+                [cell addSubview:_windView];
+                _windView.userInteractionEnabled = NO;
+            }
+            _windView.hidden = NO;
             if (!_windPlayer) {
                 _windPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"wind" ofType:@"mp3"]] error:nil];
                 _windPlayer.volume = 0.5;
@@ -201,7 +224,15 @@
                 [SVProgressHUD showInfoWithStatus:@"当前处于静音模式，不能播放"];
                 return;
             }
-            cell.backgroundColor = [UIColor colorWithRed:115/255.0 green:255/255.0 blue:8/255.0 alpha:1];
+
+            if (!_rainView) {
+                _rainView = [[UIView alloc]initWithFrame:CGRectMake(0, cell.frame.size.height*0.5, cell.frame.size.width, cell.bounds.size.height*0.5)];
+                _rainView.alpha = 0.5;
+                _rainView.backgroundColor = [UIColor colorWithRed:115/255.0 green:255/255.0 blue:8/255.0 alpha:1];
+                [cell addSubview:_rainView];
+                _rainView.userInteractionEnabled = NO;
+            }
+            _rainView.hidden = NO;
             if (!_rainPlayer) {
                 _rainPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"rain" ofType:@"mp3"]] error:nil];
                 _rainPlayer.volume = 0.5;
@@ -222,7 +253,15 @@
                 [SVProgressHUD showInfoWithStatus:@"当前处于静音模式，不能播放"];
                 return;
             }
-            cell.backgroundColor = [UIColor colorWithRed:224/255.0 green:74/255.0 blue:14/255.0 alpha:1];
+
+            if (!_thunderView) {
+                _thunderView = [[UIView alloc]initWithFrame:CGRectMake(0, cell.frame.size.height*0.5, cell.frame.size.width, cell.bounds.size.height*0.5)];
+                _thunderView.alpha = 0.5;
+                _thunderView.backgroundColor = [UIColor colorWithRed:224/255.0 green:74/255.0 blue:14/255.0 alpha:1];
+                [cell addSubview:_thunderView];
+                _thunderView.userInteractionEnabled = NO;
+            }
+            _thunderView.hidden = NO;
             if (!_thunderPlayer) {
                 _thunderPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"thunder" ofType:@"mp3"]] error:nil];
                 _thunderPlayer.volume = 0.5;
@@ -243,7 +282,15 @@
                 [SVProgressHUD showInfoWithStatus:@"当前处于静音模式，不能播放"];
                 return;
             }
-            cell.backgroundColor = [UIColor colorWithRed:251/255.0 green:200/255.0 blue:104/255.0 alpha:1];
+
+            if (!_clockView) {
+                _clockView = [[UIView alloc]initWithFrame:CGRectMake(0, cell.frame.size.height*0.5, cell.frame.size.width, cell.bounds.size.height*0.5)];
+                _clockView.alpha = 0.5;
+                _clockView.backgroundColor = [UIColor colorWithRed:251/255.0 green:200/255.0 blue:104/255.0 alpha:1];
+                [cell addSubview:_clockView];
+                _clockView.userInteractionEnabled = NO;
+            }
+            _clockView.hidden = NO;
             if (!_clockPlayer) {
                 _clockPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"quick_clock" ofType:@"mp3"]] error:nil];
                 _clockPlayer.volume = 0.5;
@@ -263,7 +310,15 @@
                 [SVProgressHUD showInfoWithStatus:@"当前处于静音模式，不能播放"];
                 return;
             }
-            cell.backgroundColor = [UIColor colorWithRed:90/255.0 green:255/255.0 blue:193/255.0 alpha:1];
+
+            if (!_birdsView) {
+                _birdsView = [[UIView alloc]initWithFrame:CGRectMake(0, cell.frame.size.height*0.5, cell.frame.size.width, cell.bounds.size.height*0.5)];
+                _birdsView.alpha = 0.5;
+                _birdsView.backgroundColor = [UIColor colorWithRed:90/255.0 green:255/255.0 blue:193/255.0 alpha:1];
+                [cell addSubview:_birdsView];
+                _birdsView.userInteractionEnabled = NO;
+            }
+            _birdsView.hidden = NO;
             if (!_birdsPlayer) {
                 _birdsPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"birds" ofType:@"mp3"]] error:nil];
                 _birdsPlayer.volume = 0.5;
@@ -274,7 +329,6 @@
             _mySlider.value = _birdsPlayer.volume;
             backView.hidden = NO;
             _mySlider.tag = btn.tag;
-            
         }
             break;
         default:
@@ -295,7 +349,7 @@
     _mySlider.maximumValue = 1.0f;//滑动条的最大值
     _mySlider.value = _mySlider.maximumValue/2;//滑动条的当前值
     [_mySlider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];//添加滑动事件
-    _mySlider.continuous = NO;//设置只有在离开滑动条的最后时刻才触发滑动事件
+    _mySlider.continuous = YES;//设置只有在离开滑动条的最后时刻才触发滑动事件
     [backView addSubview:_mySlider];//添加视图
 
     UIImageView *imag = [[UIImageView alloc]initWithFrame:CGRectMake((backView.frame.size.width-260)/2, (backView.frame.size.height-30)/2, 30, 30)];
@@ -304,41 +358,65 @@
 }
 //添加滑动事件
 -(void)sliderValueChanged:(UISlider *)paramSender{
-    
+    UICollectionViewCell *cell = [self.userCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:paramSender.tag inSection:0]];
     switch (paramSender.tag) {
         case 0:
         {
             _wavePlayer.volume = paramSender.value;
+            CGRect rectF = _waveView.frame;
+            rectF.origin.y = cell.frame.size.height * (1-paramSender.value);
+            rectF.size.height = cell.frame.size.height * paramSender.value;
+            _waveView.frame = rectF;
             
         }
             break;
         case 1:
         {
             _windPlayer.volume = paramSender.value;
+            CGRect rectF = _windView.frame;
+            rectF.origin.y = cell.frame.size.height * (1-paramSender.value);
+            rectF.size.height = cell.frame.size.height * paramSender.value;
+            _windView.frame = rectF;
             
         }
             break;
         case 2:
         {
-            _rainPlayer.volume = paramSender.value;;
+            _rainPlayer.volume = paramSender.value;
+            CGRect rectF = _rainView.frame;
+            rectF.origin.y = cell.frame.size.height * (1-paramSender.value);
+            rectF.size.height = cell.frame.size.height * paramSender.value;
+            _rainView.frame = rectF;
             
         }
             break;
         case 3:
         {
             _thunderPlayer.volume = paramSender.value;
+            CGRect rectF = _thunderView.frame;
+            rectF.origin.y = cell.frame.size.height * (1-paramSender.value);
+            rectF.size.height = cell.frame.size.height * paramSender.value;
+            _thunderView.frame = rectF;
             
         }
             break;
         case 4:
         {
             _clockPlayer.volume = paramSender.value;
+            CGRect rectF = _clockView.frame;
+            rectF.origin.y = cell.frame.size.height * (1-paramSender.value);
+            rectF.size.height = cell.frame.size.height * paramSender.value;
+            _clockView.frame = rectF;
             
         }
             break;
         case 5:
         {
             _birdsPlayer.volume = paramSender.value;
+            CGRect rectF = _birdsView.frame;
+            rectF.origin.y = cell.frame.size.height * (1-paramSender.value);
+            rectF.size.height = cell.frame.size.height * paramSender.value;
+            _birdsView.frame = rectF;
             
         }
             break;
@@ -363,6 +441,7 @@
             }
             [_wavePlayer stop];
             _wavePlayer = nil;
+            _waveView.hidden = YES;
         }
             break;
         case 1:
@@ -374,6 +453,8 @@
             }
             [_windPlayer stop];
             _windPlayer = nil;
+            _windView.hidden = YES;
+            
         }
             break;
         case 2:
@@ -385,6 +466,8 @@
             }
             [_rainPlayer stop];
             _rainPlayer = nil;
+            _rainView.hidden = YES;
+            
         }
             break;
         case 3:
@@ -396,6 +479,7 @@
             }
             [_thunderPlayer stop];
             _thunderPlayer = nil;
+            _thunderView.hidden = YES;
         }
             break;
         case 4:
@@ -407,6 +491,7 @@
             }
             [_clockPlayer stop];
             _clockPlayer = nil;
+            _clockView.hidden = YES;
         }
             break;
         case 5:
@@ -418,6 +503,7 @@
             }
             [_birdsPlayer stop];
             _birdsPlayer = nil;
+            _birdsView.hidden = YES;
         }
             break;
         default:
@@ -482,10 +568,7 @@
             timeLabel.text = [NSString stringWithFormat:@"%@:%@",time,@"00"];
         }
         stopTime = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeOver) userInfo:nil repeats:YES];
-        
     }
-    
-    
 }
 -(void)timeOver{
     
@@ -494,23 +577,37 @@
     if (seconds < 0) {
         [stopTime invalidate];
         stopTime = nil;
+        backView.hidden = YES;
+        
         if ([_wavePlayer isPlaying] && _wavePlayer != nil) {
             [_wavePlayer stop];
+            _wavePlayer = nil;
+            _waveView.hidden = YES;
         }
         if ([_windPlayer isPlaying] && _windPlayer != nil) {
             [_windPlayer stop];
+            _windPlayer = nil;
+            _windView.hidden = YES;
         }
         if ([_rainPlayer isPlaying] && _rainPlayer != nil) {
             [_rainPlayer stop];
+            _rainPlayer = nil;
+            _rainView.hidden = YES;
         }
         if ([_thunderPlayer isPlaying] && _thunderPlayer != nil) {
             [_thunderPlayer stop];
+            _thunderPlayer = nil;
+            _thunderView.hidden = YES;
         }
         if ([_clockPlayer isPlaying] && _clockPlayer != nil) {
             [_clockPlayer stop];
+            _clockPlayer = nil;
+            _clockView.hidden = YES;
         }
         if ([_birdsPlayer isPlaying] && _birdsPlayer != nil) {
             [_birdsPlayer stop];
+            _birdsPlayer = nil;
+            _birdsView.hidden = YES;
         }
         timeLabel.text = @"";
         return;
