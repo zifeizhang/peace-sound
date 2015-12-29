@@ -707,7 +707,7 @@
 }
 
 -(void)setTimeClick{
-    
+    backView.hidden = YES;
     [stopTime invalidate];
     stopTime = nil;
     TimeViewController *timeVC = [[TimeViewController alloc]init];
