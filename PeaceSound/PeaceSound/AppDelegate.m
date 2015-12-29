@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SoundViewController.h"
-//#import <AVFoundation/AVFoundation.h>
+#import <AVFoundation/AVFoundation.h>
 @interface AppDelegate ()
 
 @end
@@ -32,12 +32,12 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     
-//    [[UIApplication sharedApplication]beginReceivingRemoteControlEvents];
-//    AVAudioSession *session = [AVAudioSession sharedInstance];
-//    [session setActive:YES error:nil];
-//    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setActive:YES error:nil];
+    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
     
-    
+    //[[UIApplication sharedApplication]beginReceivingRemoteControlEvents];
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
