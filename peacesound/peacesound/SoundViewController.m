@@ -12,6 +12,7 @@
 #import "TimeViewController.h"
 #import "GDTMobBannerView.h"
 #import "SVProgressHUD.h"
+#import "ZFSlider.h"
 #define kMainWidth  ([UIScreen mainScreen].bounds.size.width - 2)/2
 #define kMainHeight  [UIScreen mainScreen].bounds.size.height
 #define bannerW  [UIScreen mainScreen].bounds.size.width
@@ -26,7 +27,7 @@
     int miao;
     
     UIView *backView;
-    
+    UIView *shadowView;
     GDTMobBannerView *_bannerView;
     
 }
@@ -71,7 +72,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:64/255.0 green:179/255.0 blue:229/255.0 alpha:1];
-    self.title = @"Sound";
+    self.title = @"静音";
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -118,7 +119,13 @@
 }
 -(void)tapView{
 
+    [self hiddenBackView];
+    [self performSelector:@selector(delayMethod) withObject:nil afterDelay:0.5f];
+}
+-(void)delayMethod{
+
     backView.hidden = YES;
+    shadowView.hidden = YES;
 }
 #pragma mark - userCollectionView
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -184,6 +191,8 @@
             }
             _mySlider.value = _wavePlayer.volume;
             backView.hidden = NO;
+            [self showBackView];
+            shadowView.hidden = NO;
             _mySlider.tag = btn.tag;
             
         }
@@ -213,6 +222,8 @@
             }
             _mySlider.value = _windPlayer.volume;
             backView.hidden = NO;
+            [self showBackView];
+            shadowView.hidden = NO;
             _mySlider.tag = btn.tag;
             
         }
@@ -242,6 +253,8 @@
             }
             _mySlider.value = _rainPlayer.volume;
             backView.hidden = NO;
+            [self showBackView];
+            shadowView.hidden = NO;
             _mySlider.tag = btn.tag;
             
         }
@@ -271,6 +284,8 @@
             }
             _mySlider.value = _thunderPlayer.volume;
             backView.hidden = NO;
+            [self showBackView];
+            shadowView.hidden = NO;
             _mySlider.tag = btn.tag;
             
         }
@@ -300,6 +315,8 @@
             }
             _mySlider.value = _clockPlayer.volume;
             backView.hidden = NO;
+            [self showBackView];
+            shadowView.hidden = NO;
             _mySlider.tag = btn.tag;
         }
             break;
@@ -328,6 +345,8 @@
             }
             _mySlider.value = _birdsPlayer.volume;
             backView.hidden = NO;
+            [self showBackView];
+            shadowView.hidden = NO;
             _mySlider.tag = btn.tag;
         }
             break;
@@ -337,24 +356,55 @@
 }
 -(void)volumeView{
 
-    backView = [[UIView alloc]initWithFrame:CGRectMake(15, (self.view.frame.size.height-60)/2, self.view.frame.size.width-30, 60)];
+    shadowView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    shadowView.backgroundColor = [UIColor blackColor];
+    shadowView.hidden = YES;
+    shadowView.alpha = 0.4;
+    [self.view addSubview:shadowView];
+    [self.view bringSubviewToFront:shadowView];
+    
+//    backView = [[UIView alloc]initWithFrame:CGRectMake(15, (self.view.frame.size.height-60)/2, self.view.frame.size.width-30, 60)];
+    backView = [[UIView alloc]initWithFrame:CGRectMake(15, 0, self.view.frame.size.width-30, 60)];
     backView.backgroundColor = [UIColor grayColor];
     backView.hidden = YES;
     backView.layer.cornerRadius = 5;
     [self.view addSubview:backView];
     [self.view bringSubviewToFront:backView];
     
-    _mySlider = [[UISlider alloc] initWithFrame:CGRectMake((backView.frame.size.width-260)/2+60, (backView.frame.size.height-23)/2, 200.0f, 23.0f)];
+    _mySlider = [[ZFSlider alloc] initWithFrame:CGRectMake((backView.frame.size.width-260)/2+60, (backView.frame.size.height-23)/2, 200.0f, 23.0f)];
     _mySlider.minimumValue = 0.0f;//滑动条的最小值
     _mySlider.maximumValue = 1.0f;//滑动条的最大值
     _mySlider.value = _mySlider.maximumValue/2;//滑动条的当前值
     [_mySlider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];//添加滑动事件
     _mySlider.continuous = YES;//设置只有在离开滑动条的最后时刻才触发滑动事件
     [backView addSubview:_mySlider];//添加视图
-
+    _mySlider.thumbTintColor = [UIColor colorWithRed:64/255.0 green:179/255.0 blue:229/255.0 alpha:1];
+    _mySlider.minimumTrackTintColor = [UIColor colorWithRed:64/255.0 green:179/255.0 blue:229/255.0 alpha:1];
+    _mySlider.maximumTrackTintColor = [UIColor colorWithRed:253/255.0 green:223/255.0 blue:154/255.0 alpha:1];
+    
     UIImageView *imag = [[UIImageView alloc]initWithFrame:CGRectMake((backView.frame.size.width-260)/2, (backView.frame.size.height-30)/2, 30, 30)];
     imag.image = [UIImage imageNamed:@"Banner_Icon@3x"];
     [backView addSubview:imag];
+}
+//显示音量调节
+-(void)showBackView{
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        CGRect rectFrame = backView.frame;
+        
+        rectFrame = CGRectMake(15, (self.view.frame.size.height-60)/2, self.view.frame.size.width-30, 60);
+        backView.frame = rectFrame;
+    }];
+}
+//隐藏音量调节
+-(void)hiddenBackView{
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        CGRect rectFrame = backView.frame;
+        
+        rectFrame = CGRectMake(15, 0, self.view.frame.size.width-30, 60);
+        backView.frame = rectFrame;
+    }];
 }
 //添加滑动事件
 -(void)sliderValueChanged:(UISlider *)paramSender{
@@ -435,6 +485,7 @@
         case 0:
         {
             backView.hidden = YES;
+            shadowView.hidden = YES;
             cell.backgroundColor = [UIColor whiteColor];
             if (Btn.selected == YES) {
                 return;
@@ -447,6 +498,7 @@
         case 1:
         {
             backView.hidden = YES;
+            shadowView.hidden = YES;
             cell.backgroundColor = [UIColor whiteColor];
             if (Btn.selected == YES) {
                 return;
@@ -460,6 +512,7 @@
         case 2:
         {
             backView.hidden = YES;
+            shadowView.hidden = YES;
             cell.backgroundColor = [UIColor whiteColor];
             if (Btn.selected == YES) {
                 return;
@@ -473,6 +526,7 @@
         case 3:
         {
             backView.hidden = YES;
+            shadowView.hidden = YES;
             cell.backgroundColor = [UIColor whiteColor];
             if (Btn.selected == YES) {
                 return;
@@ -485,6 +539,7 @@
         case 4:
         {
             backView.hidden = YES;
+            shadowView.hidden = YES;
             cell.backgroundColor = [UIColor whiteColor];
             if (Btn.selected == YES) {
                 return;
@@ -497,6 +552,7 @@
         case 5:
         {
             backView.hidden = YES;
+            shadowView.hidden = YES;
             cell.backgroundColor = [UIColor whiteColor];
             if (Btn.selected == YES) {
                 return;
@@ -546,7 +602,7 @@
     [footer addSubview:setTimeBtn];
     
     timeLabel.frame = CGRectMake((self.view.frame.size.width-60)/2, 45, 60, 30);
-    timeLabel.textColor = [UIColor redColor];
+    timeLabel.textColor = [UIColor grayColor];
     timeLabel.textAlignment = NSTextAlignmentCenter;
     [footer addSubview:timeLabel];
     
@@ -578,6 +634,7 @@
         [stopTime invalidate];
         stopTime = nil;
         backView.hidden = YES;
+        shadowView.hidden = YES;
         
         if ([_wavePlayer isPlaying] && _wavePlayer != nil) {
             [_wavePlayer stop];
@@ -707,7 +764,9 @@
 }
 
 -(void)setTimeClick{
+
     backView.hidden = YES;
+    shadowView.hidden = YES;
     [stopTime invalidate];
     stopTime = nil;
     TimeViewController *timeVC = [[TimeViewController alloc]init];
@@ -716,7 +775,8 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    backView.hidden = YES;
+    [self hiddenBackView];
+    [self performSelector:@selector(delayMethod) withObject:nil afterDelay:0.5f];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -46,6 +46,8 @@
 		2ED3CC961C2E7BE10017F46C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED3CC951C2E7BE10017F46C /* libz.tbd */; };
 		2ED3CC981C2E7BEB0017F46C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED3CC971C2E7BEB0017F46C /* Security.framework */; };
 		2ED3CC9A1C2E7BF50017F46C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED3CC991C2E7BF50017F46C /* StoreKit.framework */; };
+		2ED9CD051C338384008DF88B /* ZFSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED9CD041C338384008DF88B /* ZFSlider.m */; };
+		2ED9CD071C33AB94008DF88B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED9CD061C33AB94008DF88B /* Default.png */; };
 		2EE08EF81C31072F00AB33DA /* Banner_Icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE08EF71C31072F00AB33DA /* Banner_Icon@3x.png */; };
 		2EE08F021C31359600AB33DA /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE08EFB1C31359600AB33DA /* SVIndefiniteAnimatedView.m */; };
 		2EE08F031C31359600AB33DA /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2EE08EFD1C31359600AB33DA /* SVProgressHUD.bundle */; };
@@ -103,6 +105,9 @@
 		2ED3CC951C2E7BE10017F46C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2ED3CC971C2E7BEB0017F46C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2ED3CC991C2E7BF50017F46C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2ED9CD031C338384008DF88B /* ZFSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSlider.h; sourceTree = "<group>"; };
+		2ED9CD041C338384008DF88B /* ZFSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSlider.m; sourceTree = "<group>"; };
+		2ED9CD061C33AB94008DF88B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2EE08EF71C31072F00AB33DA /* Banner_Icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Banner_Icon@3x.png"; sourceTree = "<group>"; };
 		2EE08EFA1C31359600AB33DA /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		2EE08EFB1C31359600AB33DA /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
@@ -202,6 +207,7 @@
 		2E18DEB61C2BD5110044E04F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				2ED9CD061C33AB94008DF88B /* Default.png */,
 				2EE08EF71C31072F00AB33DA /* Banner_Icon@3x.png */,
 				2ED3CC801C2E785B0017F46C /* icon_alarm_clock@2x.png */,
 				2ED3CC811C2E785B0017F46C /* icon_alarm_clock@3x.png */,
@@ -237,6 +243,8 @@
 			children = (
 				2ED1A3921C2D2BA9000B54D0 /* SoundViewController.h */,
 				2ED1A3931C2D2BA9000B54D0 /* SoundViewController.m */,
+				2ED9CD031C338384008DF88B /* ZFSlider.h */,
+				2ED9CD041C338384008DF88B /* ZFSlider.m */,
 				2ED3CC711C2E32740017F46C /* TimeViewController.h */,
 				2ED3CC721C2E32740017F46C /* TimeViewController.m */,
 			);
@@ -339,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E18DEB11C2BCF8B0044E04F /* quick_clock.mp3 in Resources */,
+				2ED9CD071C33AB94008DF88B /* Default.png in Resources */,
 				2E18DEB31C2BCF8B0044E04F /* thunder.mp3 in Resources */,
 				2ED1A3AF1C2D3F25000B54D0 /* wave.png in Resources */,
 				2ED1A3A21C2D3EB5000B54D0 /* btn_sound.png in Resources */,
@@ -380,6 +389,7 @@
 				2EE08F051C31359600AB33DA /* SVRadialGradientLayer.m in Sources */,
 				2EE08F041C31359600AB33DA /* SVProgressHUD.m in Sources */,
 				2ED1A39B1C2D33F5000B54D0 /* SoundFooterView.m in Sources */,
+				2ED9CD051C338384008DF88B /* ZFSlider.m in Sources */,
 				2ED3CC731C2E32740017F46C /* TimeViewController.m in Sources */,
 				2EE08F021C31359600AB33DA /* SVIndefiniteAnimatedView.m in Sources */,
 			);
