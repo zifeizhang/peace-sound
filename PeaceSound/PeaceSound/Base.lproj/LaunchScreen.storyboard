@@ -16,33 +16,8 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="OX1-oo-KCv">
-                                <rect key="frame" x="32" y="156" width="256" height="256"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="256" id="4iO-tA-VIS"/>
-                                    <constraint firstAttribute="width" constant="256" id="hij-4r-Adf"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peace Sound" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hE-lB-VCs">
-                                <rect key="frame" x="64" y="108" width="192" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="192" id="mRs-BI-0Ym"/>
-                                    <constraint firstAttribute="height" constant="40" id="uh0-F0-IWG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="7hE-lB-VCs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1yi-tD-RxP"/>
-                            <constraint firstItem="OX1-oo-KCv" firstAttribute="top" secondItem="7hE-lB-VCs" secondAttribute="bottom" constant="8" id="EgB-Ev-Wuf"/>
-                            <constraint firstItem="OX1-oo-KCv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Kwt-ec-JEL"/>
-                            <constraint firstItem="OX1-oo-KCv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="oIN-oc-Z6M"/>
-                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
@@ -52,7 +27,4 @@
             <point key="canvasLocation" x="52" y="374"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Default.png" width="512" height="512"/>
-    </resources>
 </document>

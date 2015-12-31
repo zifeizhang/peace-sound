@@ -46,11 +46,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"Sound off after";
+    self.title = @"定时器";
     self.view.backgroundColor = [UIColor whiteColor];
     
     
-    timeArr = [NSArray arrayWithObjects:@"5",@"10", @"15",@"20",@"25",@"30",@"60",@"Cancel",nil];
+    timeArr = [NSArray arrayWithObjects:@"5",@"10", @"15",@"20",@"25",@"30",@"60",@"取消",nil];
     
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
@@ -107,7 +107,7 @@
         label.textColor = [UIColor redColor];
     }else{
     
-        label.text = [NSString stringWithFormat:@"%@ minutes",timeArr[indexPath.item]];
+        label.text = [NSString stringWithFormat:@"%@ 分钟",timeArr[indexPath.item]];
     }
     
     [cell addSubview:label];

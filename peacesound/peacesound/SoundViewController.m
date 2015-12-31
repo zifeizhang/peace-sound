@@ -601,7 +601,8 @@
     [setTimeBtn addTarget:self action:@selector(setTimeClick) forControlEvents:UIControlEventTouchUpInside];
     [footer addSubview:setTimeBtn];
     
-    timeLabel.frame = CGRectMake((self.view.frame.size.width-60)/2, 45, 60, 30);
+//    timeLabel.frame = CGRectMake((self.view.frame.size.width-60)/2, 45, 60, 30);
+    timeLabel.frame = CGRectMake((self.view.frame.size.width-110)/4*3+55, 110, 55, 30);
     timeLabel.textColor = [UIColor grayColor];
     timeLabel.textAlignment = NSTextAlignmentCenter;
     [footer addSubview:timeLabel];
