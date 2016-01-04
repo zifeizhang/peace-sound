@@ -17,7 +17,7 @@
 #define kMainHeight  [UIScreen mainScreen].bounds.size.height
 #define bannerW  [UIScreen mainScreen].bounds.size.width
 #define bannerH  [UIScreen mainScreen].bounds.size.height
-@interface SoundViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface SoundViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,GDTMobBannerViewDelegate>
 {
     
     NSArray *imageArr;
@@ -76,7 +76,7 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    //_bannerView.delegate = self; // 设置Delegate
+    _bannerView.delegate = self; // 设置Delegate
     _bannerView.currentViewController = self; //设置当前的ViewController
     _bannerView.interval = 30; //【可选】设置刷新频率;默认30秒
     _bannerView.isGpsOn = NO; //【可选】开启GPS定位;默认关闭
@@ -795,7 +795,36 @@
     [super didReceiveMemoryWarning];
     
 }
+// 请求广告条数据成功后调用
+- (void)bannerViewDidReceived{
 
+}
+// 请求广告条数据失败后调用
+- (void)bannerViewFailToReceived:(NSError*)errCode{
+
+    //NSLog(@"失败====%@",errCode);
+    //[_bannerView loadAdAndShow];
+}
+// 全屏广告弹出时调用
+- (void)bannerViewDidPresentScreen{
+
+}
+// 全屏广告关闭时调用
+- (void)bannerViewDidDismissScreen{
+
+}
+// 应用进入后台时调用
+- (void)bannerViewWillLeaveApplication{
+
+}
+// 广告条曝光回调
+- (void)bannerViewWillExposure{
+
+}
+// 广告条点击回调
+- (void)bannerViewClicked{
+
+}
 
 /*
 #pragma mark - Navigation

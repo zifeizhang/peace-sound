@@ -39,7 +39,7 @@
 		2ED3CC821C2E785B0017F46C /* icon_alarm_clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED3CC801C2E785B0017F46C /* icon_alarm_clock@2x.png */; };
 		2ED3CC831C2E785B0017F46C /* icon_alarm_clock@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED3CC811C2E785B0017F46C /* icon_alarm_clock@3x.png */; };
 		2ED3CC8A1C2E7AF40017F46C /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED3CC891C2E7AF30017F46C /* libGDTMobSDK.a */; };
-		2ED3CC8C1C2E7B700017F46C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED3CC8B1C2E7B700017F46C /* AdSupport.framework */; };
+		2ED3CC8C1C2E7B700017F46C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED3CC8B1C2E7B700017F46C /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		2ED3CC8E1C2E7B7E0017F46C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED3CC8D1C2E7B7E0017F46C /* CoreLocation.framework */; };
 		2ED3CC901C2E7B8B0017F46C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED3CC8F1C2E7B8B0017F46C /* QuartzCore.framework */; };
 		2ED3CC921C2E7BB30017F46C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED3CC911C2E7BB30017F46C /* SystemConfiguration.framework */; };
@@ -507,8 +507,8 @@
 					"$(PROJECT_DIR)/libs",
 				);
 				OTHER_LDFLAGS = (
-					"-ObjC",
 					"-lstdc++",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gohoc.peacesound;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -530,8 +530,8 @@
 					"$(PROJECT_DIR)/libs",
 				);
 				OTHER_LDFLAGS = (
-					"-ObjC",
 					"-lstdc++",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gohoc.peacesound;
 				PRODUCT_NAME = "$(TARGET_NAME)";
