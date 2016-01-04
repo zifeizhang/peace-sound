@@ -116,6 +116,17 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapView)];
     [self.view addGestureRecognizer:tap];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+
+    [super viewWillAppear:animated];
+    
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setActive:YES error:nil];
+    [session setCategory:AVAudioSessionCategoryMultiRoute error:nil];
+    //AVAudioSessionCategoryMultiRoute
 }
 -(void)tapView{
 
@@ -163,6 +174,7 @@
 }
 //单击
 -(void)tabButtonTap:(UIButton*)btn{
+    
     UICollectionViewCell *cell = [self.userCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:btn.tag inSection:0]];
     UIButton *Btn = (UIButton*)[self.view viewWithTag:10];
     switch (btn.tag) {
