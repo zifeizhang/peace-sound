@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  peacesound
+
+  Created by zhangzifei on 16/1/4.
+  Copyright © 2016年 com.gohoc. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "静音";
+"JINGYIN"="静音";
+"DANJIDAKAISHUANGJIGUANBI" = "单击打开,双击关闭";
+"DINGSHIQI" = "定时器";
+"FENZHONG" = "分钟";
+"QUXIAO" = "取消";
+"DANGQIANCHUYUJINGYINMOSHI" = "静音模式不能播放！";

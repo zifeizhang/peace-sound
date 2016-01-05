@@ -8,6 +8,7 @@
 
 #import "SoundFooterView.h"
 
+
 @implementation SoundFooterView
 
 - (void)awakeFromNib {

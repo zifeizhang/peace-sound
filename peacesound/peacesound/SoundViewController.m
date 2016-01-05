@@ -72,7 +72,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:64/255.0 green:179/255.0 blue:229/255.0 alpha:1];
-    self.title = @"静音";
+//    self.title = @"静音";
+    self.title = NSLocalizedString(@"JINGYIN", nil);
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -182,7 +183,7 @@
         {
             if (Btn.selected == YES) {
                 [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-                [SVProgressHUD showInfoWithStatus:@"当前处于静音模式，不能播放"];
+                [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"DANGQIANCHUYUJINGYINMOSHI", nil)];
                 return;
             }
     
@@ -213,7 +214,7 @@
         {
             if (Btn.selected == YES) {
                 [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-                [SVProgressHUD showInfoWithStatus:@"当前处于静音模式，不能播放"];
+                [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"DANGQIANCHUYUJINGYINMOSHI", nil)];
                 return;
             }
 
@@ -244,7 +245,7 @@
         {
             if (Btn.selected == YES) {
                 [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-                [SVProgressHUD showInfoWithStatus:@"当前处于静音模式，不能播放"];
+                [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"DANGQIANCHUYUJINGYINMOSHI", nil)];
                 return;
             }
 
@@ -275,7 +276,7 @@
         {
             if (Btn.selected == YES) {
                 [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-                [SVProgressHUD showInfoWithStatus:@"当前处于静音模式，不能播放"];
+                [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"DANGQIANCHUYUJINGYINMOSHI", nil)];
                 return;
             }
 
@@ -306,7 +307,7 @@
         {
             if (Btn.selected == YES) {
                 [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-                [SVProgressHUD showInfoWithStatus:@"当前处于静音模式，不能播放"];
+                [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"DANGQIANCHUYUJINGYINMOSHI", nil)];
                 return;
             }
 
@@ -336,7 +337,7 @@
         {
             if (Btn.selected == YES) {
                 [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-                [SVProgressHUD showInfoWithStatus:@"当前处于静音模式，不能播放"];
+                [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"DANGQIANCHUYUJINGYINMOSHI", nil)];
                 return;
             }
 
@@ -618,6 +619,9 @@
     timeLabel.textColor = [UIColor grayColor];
     timeLabel.textAlignment = NSTextAlignmentCenter;
     [footer addSubview:timeLabel];
+    
+    UILabel *lab = [footer viewWithTag:16];
+    lab.text = NSLocalizedString(@"DANJIDAKAISHUANGJIGUANBI", nil);
     
     return footer;
 }

@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  peacesound
+
+  Created by zhangzifei on 16/1/4.
+  Copyright © 2016年 com.gohoc. All rights reserved.
+*/
+
+
+"CFBundleDisplayName" = "Be Silent";
+"JINGYIN"="Be Silent";
+"DANJIDAKAISHUANGJIGUANBI" = "Click to open,double-click the shut down";
+"DINGSHIQI" = "Timer";
+"FENZHONG" = "minutes";
+"QUXIAO" = "Cancel";
+"DANGQIANCHUYUJINGYINMOSHI" = "Silent mode can't play !";

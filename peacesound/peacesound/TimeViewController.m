@@ -46,7 +46,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"定时器";
+    self.title = NSLocalizedString(@"DINGSHIQI", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     
     
@@ -103,11 +103,12 @@
     label.textColor = [UIColor grayColor];
     label.font = [UIFont systemFontOfSize:20];
     if (indexPath.item == 7) {
-        label.text = [NSString stringWithFormat:@"%@",timeArr[indexPath.item]];
+        //label.text = [NSString stringWithFormat:@"%@",timeArr[indexPath.item]];
+        label.text = NSLocalizedString(@"QUXIAO", nil);
         label.textColor = [UIColor redColor];
     }else{
     
-        label.text = [NSString stringWithFormat:@"%@ 分钟",timeArr[indexPath.item]];
+        label.text = [NSString stringWithFormat:@"%@ %@",timeArr[indexPath.item],NSLocalizedString(@"FENZHONG", nil)];
     }
     
     [cell addSubview:label];
