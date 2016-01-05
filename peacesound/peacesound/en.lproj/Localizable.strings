@@ -7,9 +7,9 @@
 */
 
 
-"CFBundleDisplayName" = "Silence";
-"JINGYIN"="Silence";
-"DANJIDAKAISHUANGJIGUANBI" = "Click to open,double-click the shut down";
+
+"JINGYIN"="Peace Sound";
+"DANJIDAKAISHUANGJIGUANBI" = "Click to open,double click to close";
 "DINGSHIQI" = "Timer";
 "FENZHONG" = "minutes";
 "QUXIAO" = "Cancel";

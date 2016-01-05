@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  peacesound
+
+  Created by zhangzifei on 16/1/5.
+  Copyright © 2016年 com.gohoc. All rights reserved.
+*/
+CFBundleDisplayName = "静音";

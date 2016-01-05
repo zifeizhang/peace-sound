@@ -17,6 +17,7 @@
 		2E18DEB31C2BCF8B0044E04F /* thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E18DEAD1C2BCF8B0044E04F /* thunder.mp3 */; };
 		2E18DEB41C2BCF8B0044E04F /* waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E18DEAE1C2BCF8B0044E04F /* waves.mp3 */; };
 		2E18DEB51C2BCF8B0044E04F /* wind.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E18DEAF1C2BCF8B0044E04F /* wind.mp3 */; };
+		2E26AE1A1C3B9473002D94D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E26AE1C1C3B9473002D94D3 /* InfoPlist.strings */; };
 		2E3290B11C3A740700C1CFF8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E3290B31C3A740700C1CFF8 /* Localizable.strings */; };
 		2EA5120F1C34DC710009A505 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA5120E1C34DC710009A505 /* Images.xcassets */; };
 		2ED1A38E1C2D1927000B54D0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED1A38D1C2D1927000B54D0 /* AVFoundation.framework */; };
@@ -70,6 +71,9 @@
 		2E18DEAD1C2BCF8B0044E04F /* thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thunder.mp3; sourceTree = "<group>"; };
 		2E18DEAE1C2BCF8B0044E04F /* waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = waves.mp3; sourceTree = "<group>"; };
 		2E18DEAF1C2BCF8B0044E04F /* wind.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wind.mp3; sourceTree = "<group>"; };
+		2E26AE1B1C3B9473002D94D3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		2E26AE1D1C3B9479002D94D3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		2E26AE1E1C3B947B002D94D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2E3290B21C3A740700C1CFF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2E3290B41C3A741100C1CFF8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2E3290B51C3A741500C1CFF8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				2E18DE9E1C2BCCF80044E04F /* Assets.xcassets */,
 				2E18DEA01C2BCCF80044E04F /* LaunchScreen.storyboard */,
 				2E18DEA31C2BCCF80044E04F /* Info.plist */,
+				2E26AE1C1C3B9473002D94D3 /* InfoPlist.strings */,
 				2E3290B31C3A740700C1CFF8 /* Localizable.strings */,
 				2EA5120E1C34DC710009A505 /* Images.xcassets */,
 				2E18DE921C2BCCF80044E04F /* Supporting Files */,
@@ -341,6 +346,7 @@
 				Base,
 				"zh-Hans",
 				"zh-Hant",
+				en,
 			);
 			mainGroup = 2E18DE861C2BCCF80044E04F;
 			productRefGroup = 2E18DE901C2BCCF80044E04F /* Products */;
@@ -376,6 +382,7 @@
 				2ED3CC831C2E785B0017F46C /* icon_alarm_clock@3x.png in Resources */,
 				2ED3CC821C2E785B0017F46C /* icon_alarm_clock@2x.png in Resources */,
 				2E18DEB41C2BCF8B0044E04F /* waves.mp3 in Resources */,
+				2E26AE1A1C3B9473002D94D3 /* InfoPlist.strings in Resources */,
 				2ED1A3B01C2D3F25000B54D0 /* wind.png in Resources */,
 				2ED1A3AE1C2D3F25000B54D0 /* thunder.png in Resources */,
 				2ED1A3A31C2D3EB5000B54D0 /* btn_time_disable.png in Resources */,
@@ -419,6 +426,16 @@
 				2ED47CB01C3B49EE008E0930 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2E26AE1C1C3B9473002D94D3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E26AE1B1C3B9473002D94D3 /* zh-Hans */,
+				2E26AE1D1C3B9479002D94D3 /* zh-Hant */,
+				2E26AE1E1C3B947B002D94D3 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		2E3290B31C3A740700C1CFF8 /* Localizable.strings */ = {
